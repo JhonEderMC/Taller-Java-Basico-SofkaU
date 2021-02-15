@@ -23,4 +23,15 @@ public class Teclado {
     return number;
     }
 
+    public static Integer entradaInteger(){
+        Scanner scanner = new Scanner(System.in);
+        Integer number=0;
+        try{
+            number = scanner.nextInt();
+        }catch (NumberFormatException e){
+            System.out.println("Por favor ingrese un numero separado por punto");
+        }
+        return number;
+    }
+
 }
