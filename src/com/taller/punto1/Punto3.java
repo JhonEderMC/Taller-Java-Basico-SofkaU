@@ -6,7 +6,7 @@ public class Punto3 {
 
     private static void areaCirculo(){
         System.out.println("Ingrese el radio: ");
-        Double radio = Double.parseDouble(Teclado.entrada());
+        Double radio = Double.parseDouble(Teclado.entradaTexto());
         Double area= Math.PI*(Math.pow(radio, 2));
         System.out.println("El area es: "+area);
     }
