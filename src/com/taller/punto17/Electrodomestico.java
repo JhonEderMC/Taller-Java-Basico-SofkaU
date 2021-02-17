@@ -24,6 +24,7 @@ public class Electrodomestico {
        this.consumoEnergetico = ConsumosEnergeticos.F.toString().charAt(0);
        this.precioBase = PRECIO_BASE;
        this.peso = PESO_BASE;
+       starter();
     }
 
     public Electrodomestico(Double precioBase, Double peso) {
@@ -43,6 +44,7 @@ public class Electrodomestico {
     public void starter(){
         comprobarConsumoEnergetico(this.consumoEnergetico);
         comprobarColor(this.color);
+        precioFinal();
     }
 
     public Boolean comprobarConsumoEnergetico(Character letra){
@@ -69,6 +71,28 @@ public class Electrodomestico {
         return Boolean.FALSE;
 
     }
+
+    public void   precioFinal(){
+        Double precio = this.precioBase;
+        //aumento por consumo
+        String c = String.valueOf(this.consumoEnergetico); //convertir a string el consumo
+        precio = precio + ConsumosEnergeticos.valueOf(c).getValor();
+
+        //aumento por peso
+        if(this.peso >=0 && this.peso<=19){
+            precio = precio +10.0;
+        }else if(this.peso >=20 && this.peso<=49){
+            precio = precio +50.0;
+        }else if(this.peso >=50 && this.peso<=79) {
+            precio = precio + 80.0;
+        }else if(this.peso>=80) {
+            precio = precio + 100.0;
+        }
+
+        this.precioBase= precio;
+
+    }
+
 
     public Double getPrecioBase() {
         return precioBase;
