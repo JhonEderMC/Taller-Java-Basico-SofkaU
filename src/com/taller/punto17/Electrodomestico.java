@@ -34,27 +34,39 @@ public class Electrodomestico {
 
     public Electrodomestico(Double precioBase, String color, Character consumoEnergetico, Double peso) {
         this.precioBase = precioBase;
-        this.color = color;
+        this.color = color.toUpperCase();
         this.consumoEnergetico = consumoEnergetico;
         this.peso = peso;
+        starter();
     }
 
+    public void starter(){
+        comprobarConsumoEnergetico(this.consumoEnergetico);
+        comprobarColor(this.color);
+    }
 
     public Boolean comprobarConsumoEnergetico(Character letra){
         letra = Character.toUpperCase(letra);
-        for(ConsumosEnergeticos c: ConsumosEnergeticos.values()){
-            if(letra == c.toString().charAt(0)){
+        for(ConsumosEnergeticos c: ConsumosEnergeticos.values()){ //recorrer enum de consumos
+            if(letra == c.toString().charAt(0)){ //comprobar si esta bien escrito
                 return true;
             }
         }
-        this.color=Colores.BLANCO.toString();//color por defecto
+        this.consumoEnergetico = ConsumosEnergeticos.F.toString().charAt(0);
         return Boolean.FALSE; //Ingreso letra equivocado
     }
 
 
 
-    public void comprobarColor(String color){
+    public Boolean comprobarColor(String color){
         color = color.trim();
+        for(Colores c:Colores.values() ){
+            if(c.toString().equalsIgnoreCase(color)){
+                return Boolean.TRUE;
+            }
+        }
+        this.color= Colores.BLANCO.toString();
+        return Boolean.FALSE;
 
     }
 
@@ -72,5 +84,15 @@ public class Electrodomestico {
 
     public Double getPeso() {
         return peso;
+    }
+
+    @Override
+    public String toString() {
+        return "Electrodomestico{" +
+                "precioBase=" + precioBase +
+                ", color='" + color + '\'' +
+                ", consumoEnergetico=" + consumoEnergetico +
+                ", peso=" + peso +
+                '}';
     }
 }
