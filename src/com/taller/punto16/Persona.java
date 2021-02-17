@@ -67,9 +67,9 @@ public class Persona {
     private void comprobarSexo(Character sexo){
         sexo = Character.toUpperCase(sexo); //mayusculas
         if(sexo.equals('H') || sexo.equals('M')){ //si es  H o M
-            this.setSexo(sexo); //si esta en minuscula
+            this.sexo= sexo; //si esta en minuscula
         }else{
-            this.setSexo('H');
+            this.sexo='H';
         }
     }
 
@@ -103,8 +103,8 @@ public class Persona {
     }
 
     public void setSexo(Character sexo) {
-        comprobarSexo(sexo);
         this.sexo = sexo;
+        comprobarSexo(sexo);
     }
 
     public Double getPeso() {
