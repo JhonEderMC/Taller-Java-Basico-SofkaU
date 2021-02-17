@@ -103,6 +103,7 @@ public class Persona {
     }
 
     public void setSexo(Character sexo) {
+        comprobarSexo(sexo);
         this.sexo = sexo;
     }
 
@@ -135,13 +136,5 @@ public class Persona {
     }
 
 
-    public static void main(String[] args) {
 
-        //Persona p = new Persona("Diego", 20,'M' );
-        Persona p = new Persona("Diego", 16,'m',  68.0,1.78);
-        p.generaDNI();
-        System.out.println(p.toString());
-        //System.out.println(p.calcularIMC());
-        //System.out.println(p.esMayorDeEdad());
-    }
 }
