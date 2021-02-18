@@ -44,7 +44,7 @@ public class Electrodomestico {
     public void starter(){
         comprobarConsumoEnergetico(this.consumoEnergetico);
         comprobarColor(this.color);
-        precioFinal();
+        //precioFinal();
     }
 
     public Boolean comprobarConsumoEnergetico(Character letra){
@@ -109,6 +109,10 @@ public class Electrodomestico {
     public Double getPeso() {
         return peso;
     }
+    public void setPrecioBase(Double precioBase) {
+        this.precioBase = precioBase;
+    }
+
 
     @Override
     public String toString() {
@@ -119,4 +123,6 @@ public class Electrodomestico {
                 ", peso=" + peso +
                 '}';
     }
+
+
 }
