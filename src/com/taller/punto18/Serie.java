@@ -2,8 +2,8 @@ package com.taller.punto18;
 
 public class Serie {
 
-    private Integer TEMPORADAS_POR_DEFECTO=3;
-    private Boolean ENTREGADO_POR_DEFECTO=Boolean.FALSE;
+    private static final Integer TEMPORADAS_POR_DEFECTO=3;
+    private static final Boolean ENTREGADO_POR_DEFECTO=Boolean.FALSE;
 
     private String titulo;
     private Integer numeroTemporados;
