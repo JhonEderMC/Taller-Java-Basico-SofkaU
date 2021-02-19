@@ -10,17 +10,21 @@ public class Television  extends Electrodomestico{
 
     public Television() {
         super();
+        this.resolucion = RESOLUCION_POR_DEFECTO;
+        this.tdt = TDT_POR_DEFECTO;
     }
 
     public Television(Double precioBase, Double peso) {
         super(precioBase, peso);
+        this.resolucion = RESOLUCION_POR_DEFECTO;
+        this.tdt = TDT_POR_DEFECTO;
     }
 
     public Television(Double precioBase, String color, Character consumoEnergetico, Double peso, Integer resolucion, Boolean tdt) {
         super(precioBase, color, consumoEnergetico, peso);
         this.resolucion = resolucion;
         this.tdt = tdt;
-        precioFinal();
+        //precioFinal();
     }
 
     public void precioFinal(){
