@@ -64,6 +64,10 @@ public class VideoJuego  implements  Entregable{
         return compania;
     }
 
+    public Integer getHorasEstimadas() {
+        return horasEstimadas;
+    }
+
     @Override
     public String toString() {
         return "VideoJuego{" +
